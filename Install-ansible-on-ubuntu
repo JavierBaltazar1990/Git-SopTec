@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#
+# script: install-ansible-on-ubuntu.sh
+#
+
+#set -x
+
+# vars
+
+# main
+
+echo
+echo "Updating apt lists."
+sudo apt-get -qq update
+echo "Installing software-properties-common."
+sudo apt-get -qq install software-properties-common
+
+echo "Installing ansible from ansible ppa repository."
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get -qq update
+sudo apt-get -qq install ansible
+
+echo
+echo
+echo "Now follow this instructions to setup a ansible enviroment."
+echo
+echo "$ mkdir ~/ansible-tests"
+echo "$ cd ~/ansible-tests"
+echo "$ git http://git.enova.mx/infra/ansible.git"
